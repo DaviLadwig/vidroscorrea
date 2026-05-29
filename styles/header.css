@@ -1,0 +1,299 @@
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 999;
+}
+
+/* =========================
+NAV CONTAINER
+========================= */
+
+.nav-container {
+
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 26px;
+
+  transition:
+    background .4s ease,
+    box-shadow .4s ease,
+    border .4s ease,
+    transform .4s ease;
+
+  /* ESTADO INICIAL */
+
+  background: rgba(255, 255, 255, .10);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, .12);
+}
+
+/* =========================
+SCROLL
+========================= */
+
+.header.scrolled .nav-container {
+
+  background: rgba(255, 255, 255, .92);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(0, 0, 0, .05);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, .08);
+
+  transform: translateY(-4px);
+}
+
+/* =========================
+LOGO
+========================= */
+
+.logo img {
+  width: 200px;
+}
+
+/* =========================
+MENU DESKTOP
+========================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #0a282f;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: .3s;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #87e1d7;
+  transition: .3s;
+}
+
+.navbar a:hover {
+  color: #3ba7b8;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+BOTÃO HEADER
+========================= */
+
+.btn-header {
+  padding: 15px 28px;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #8fe3d6, #7ed4ea);
+
+  color: #0d4f5d;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+.btn-header:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(126, 212, 234, .35);
+}
+
+/* =========================
+MENU HAMBURGUER
+========================= */
+
+.menu-toggle {
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  background: none;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+
+  background: #1d5563;
+  border-radius: 10px;
+}
+
+/* =========================
+MENU MOBILE
+========================= */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+
+  width: 320px;
+  height: 100vh;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+  z-index: 1000;
+
+  padding: 30px;
+
+  transition: .4s ease;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+}
+
+.mobile-top img {
+  width: 180px;
+}
+
+.mobile-top button {
+  background: none;
+  border: none;
+
+  font-size: 28px;
+  cursor: pointer;
+
+  color: #1d5563;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  color: #1d5563;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.btn-mobile {
+  width: 100%;
+  height: 55px;
+
+  margin-top: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  background: linear-gradient(135deg, #8fe3d6, #7ed4ea);
+
+  color: #0d4f5d;
+}
+
+/* =========================
+RESPONSIVO
+========================= */
+
+@media(max-width:980px) {
+
+  .navbar,
+  .btn-header {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-container {
+    height: 80px;
+  }
+
+  .logo img {
+    width: 180px;
+  }
+
+}
+
+@media(max-width:480px) {
+
+  .mobile-menu {
+    width: 100%;
+  }
+
+}
+
+.hero-video {
+  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+
+  transform: scale(1.02);
+
+  filter:
+    contrast(1.05) saturate(1.05) brightness(.88);
+
+  image-rendering: auto;
+
+  backface-visibility: hidden;
+}

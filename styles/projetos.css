@@ -1,0 +1,242 @@
+/* =========================
+PROJECTS
+========================= */
+
+.projects {
+    padding: 100px 0;
+
+    background: #f7f8f9;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 40px;
+}
+
+.projects-title h2 {
+    font-size: 48px;
+    line-height: 1.05;
+
+    margin-top: 14px;
+
+    color: #103f4b;
+
+    font-family: serif;
+
+    max-width: 520px;
+}
+
+/* =========================
+BOTÃO
+========================= */
+
+.projects-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+
+    color: #103f4b;
+
+    font-weight: 600;
+}
+
+.projects-link i {
+    transition: .4s ease;
+}
+
+.projects-link:hover i {
+    transform:
+        translateX(3px) translateY(-3px);
+}
+
+/* =========================
+GRID
+========================= */
+
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 520px));
+
+    justify-content: center;
+
+    gap: 24px;
+}
+
+/* =========================
+CARD
+========================= */
+
+
+.project-card {
+    position: relative;
+
+    height: 520px;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    transition: .4s ease;
+}
+
+/* =========================
+IMAGEM
+========================= */
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 1s ease;
+}
+
+/* =========================
+OVERLAY
+========================= */
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(to top,
+            rgba(0, 0, 0, .72),
+            rgba(0, 0, 0, .18),
+            rgba(0, 0, 0, 0));
+}
+
+/* =========================
+CONTENT
+========================= */
+
+.project-content {
+    position: absolute;
+
+    left: 30px;
+    bottom: 30px;
+
+    z-index: 2;
+}
+
+.project-content span {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: #8fe3d6;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.project-content h3 {
+    font-size: 42px;
+    line-height: 1.02;
+
+    color: #fff;
+
+    font-family: serif;
+
+    margin-bottom: 14px;
+
+    max-width: 360px;
+}
+
+.project-content p {
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, .92);
+
+    max-width: 320px;
+}
+
+/* =========================
+HOVER
+========================= */
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* =========================
+RESPONSIVO
+========================= */
+
+@media(max-width:980px) {
+
+    .project-card {
+        height: 360px;
+    }
+
+    .project-content h3 {
+        font-size: 34px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .projects {
+        padding: 80px 0;
+    }
+
+    .projects-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 24px;
+    }
+
+    .projects-title h2 {
+        font-size: 36px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .project-card {
+        height: 320px;
+    }
+
+    .project-content {
+        left: 22px;
+        bottom: 22px;
+    }
+
+    .project-content h3 {
+        font-size: 28px;
+    }
+
+    .project-content p {
+        font-size: 15px;
+    }
+
+}
