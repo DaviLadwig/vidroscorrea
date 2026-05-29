@@ -157,11 +157,10 @@ MENU HAMBURGUER
 }
 
 .menu-toggle span {
-  width: 100%;
+  width: 70%;
   height: 3px;
 
   background: #1d5563;
-  border-radius: 10px;
 }
 
 /* =========================
@@ -224,7 +223,7 @@ MENU MOBILE
 
 .mobile-nav a {
   text-decoration: none;
-  color: #1d5563;
+  color: #0d2e36;
   font-size: 18px;
   font-weight: 500;
 }
